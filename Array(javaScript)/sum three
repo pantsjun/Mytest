@@ -1,0 +1,21 @@
+var threeSum = function (nums){
+    let res =[];
+    let target =0;
+    nums.sort((a,b) => {a-b});
+    let front = 0;
+    let i =0
+    let rear =nums.length-1;
+    while(front !== rear) {
+        target= nums[i];
+        cosnt sum = target + nums[front] + nums[rear];
+        if(sum === 0) {
+            res.push(nums[i],nums[front],nums[rear]);
+        }else if(sum < 0) {
+            front ++;
+        }else if(sum > 0) {
+            rear ++;
+        }
+        i++;
+    }
+
+}
